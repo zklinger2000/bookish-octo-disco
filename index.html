@@ -27,18 +27,15 @@
       <div class="tbox-wrapper">
         <div class="tbox-header">
           <div class="tbox-name">Exercise</div>
+          <div class="tbox-time">0.5 hour</div>
         </div>
         <div class="tbox-container">
           <div ng-repeat="tbox in vm.tboxes"
-               class="tbox-item tbox-3"
+               class="tbox-item"
                ng-click="vm.tboxClick(tbox)"
                ng-class="{'tbox-done': tbox.isDone}">
           </div>
         </div>
-      </div>
-      <div class="tbox-progress">
-        <div ng-repeat="bar in vm.bars"
-             class="tbox-progress-item"></div>
       </div>
     </div>
   </div>
