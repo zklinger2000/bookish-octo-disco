@@ -12,6 +12,7 @@
   <script src="scripts/services/client.service.todos.js" type="text/javascript"></script>
   <script src="scripts/directives/client.directive.todos.js" type="text/javascript"></script>
   <script src="scripts/controllers/client.controller.tboxes.js" type="text/javascript"></script>
+  <script src="scripts/models/server.model.tbox.js" type="text/javascript"></script>
 </head>
 <body ng-app="timeboxApp">
   <header>
@@ -26,14 +27,16 @@
     <div class="tbox-group">
       <div class="tbox-wrapper">
         <div class="tbox-header">
-          <div class="tbox-name">Exercise</div>
-          <div class="tbox-time">0.5 hour</div>
+          <div class="tbox-name" ng-bind="vm.tbox.name"></div>
+          <div class="tbox-time" ng-bind="vm.tbox.duration"></div>
+          <div class="tbox-time" ng-bind="vm.tbox.units"></div>
         </div>
         <div class="tbox-container">
-          <div ng-repeat="tbox in vm.tboxes"
-               class="tbox-item"
-               ng-click="vm.tboxClick(tbox)"
-               ng-class="{'tbox-done': tbox.isDone}">
+          <div ng-repeat="cell in vm.tbox.cells"
+               class="cell"
+               ng-click="vm.tboxClick(cell)"
+               ng-class="{'cell-done': cell.isDone}">
+            <div class="cell-time" ng-bind="cell.completed.toLocaleString()"></div>
           </div>
         </div>
       </div>

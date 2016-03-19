@@ -1,30 +1,25 @@
 'use strict';
 
 angular.module('timeboxApp')
-.controller('tboxesCtrl', function() {
+.controller('tboxesCtrl', function(Tbox) {
   var vm = this;
   
   vm.hello = hello;
-  vm.tboxes = [];
-  for (var i = 0; i < 6; i++) {
-    vm.tboxes[i] = { isDone: false };
-  }
-  vm.tboxes.forEach(function(tbox) {
-    tbox.isDone = false;
-  });
-  vm.bars = [];
-  
+
+  vm.tbox = new Tbox(6, 'Exercise', 2, 'hr');
+
   vm.tboxClick = tboxClick;
   
-  function tboxClick(tbox) {
-    tbox.isDone = true;
-    if (vm.tboxes.every(function(tbox) {
-      return tbox.isDone;
+  function tboxClick(cell) {
+    cell.isDone = true;
+    cell.completed = new Date();
+    ++vm.tbox.totalAmt;
+    if (vm.tbox.cells.every(function(cell) {
+      return cell.isDone;
     })) {
-      vm.bars.push({});
-      vm.tboxes.forEach(function(tbox) {
-        tbox.isDone = false;
-      });
+      vm.tbox.completed = new Date();
+      console.log('It\'s Full!');
+      console.log(vm.tbox);
     }
   }
   

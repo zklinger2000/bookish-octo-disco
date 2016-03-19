@@ -25,9 +25,9 @@
   padding: 10px 0;
   background: #eee;
   border-radius: 20px;
+/*  display: flex;*/
 }
-.tbox-item {
-  color: #eee;
+.cell {
   margin: 10px;
   height: 90px;
   width: 90px;
@@ -35,10 +35,15 @@
   border-radius: 10px;
   box-shadow: 3px 4px 3px 2px rgba(0,0,0,0.1);
 }
-.tbox-item:hover {
+.cell-time {
+  color: #eee;
+  font-size: .6em;
+  text-align: center;
+}
+.cell:hover {
   background: #3db5da;
 }
-.tbox-done, .tbox-item.tbox-done {
+.tbox-done, .cell.cell-done {
   background: red;
 }
 
@@ -52,13 +57,19 @@
 }
 .tbox-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 .tbox-name, .tbox-time {
   align-self: center;
 }
-.tbox-item {
-
+.tbox-name {
+  margin-right: auto;
+}
+.cell {
+  display: flex;
+}
+.cell-time {
+  align-self: center;
 }
 
 /* ================================= 
