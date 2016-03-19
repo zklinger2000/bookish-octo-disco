@@ -5,19 +5,13 @@ angular.module('timeboxApp')
   var vm = this;
   
   vm.hello = hello;
-  vm.tboxes = [{
-    isDone: false
-  }, {
-    isDone: false
-  }, {
-    isDone: false
-  }, {
-    isDone: false
-  }, {
-    isDone: false
-  }, {
-    isDone: false
-  }];
+  vm.tboxes = [];
+  for (var i = 0; i < 6; i++) {
+    vm.tboxes[i] = { isDone: false };
+  }
+  vm.tboxes.forEach(function(tbox) {
+    tbox.isDone = false;
+  });
   vm.bars = [];
   
   vm.tboxClick = tboxClick;
