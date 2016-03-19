@@ -1,19 +1,47 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-	<title>Flexbox Layout</title>
-	<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/page.css">
-	<link rel="stylesheet" href="css/flexbox.css">
+  <title></title>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<!--  <link href='styles/main.css' rel='stylesheet' type="text/css">-->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/tboxes.css">
+  <script src="vendor/angular.js" type="text/javascript"></script>
+  <script src="scripts/app.js" type="text/javascript"></script>
+  <script src="scripts/controllers/client.controller.todos.js" type="text/javascript"></script>
+  <script src="scripts/services/client.service.todos.js" type="text/javascript"></script>
+  <script src="scripts/directives/client.directive.todos.js" type="text/javascript"></script>
+  <script src="scripts/controllers/client.controller.tboxes.js" type="text/javascript"></script>
 </head>
-<body>
-	<div class="container">
-		<div class="item-1 item">Item 1</div>
-		<div class="item-2 item">Item 2</div>
-		<div class="item-3 item">Item 3</div>
-		<div class="item-4 item">Item 4</div>
-		<div class="item-5 item">Item 5</div>
-		<div class="item-6 item">Item 6</div>
-	</div>
+<body ng-app="timeboxApp">
+  <header>
+    <h1>Timebox</h1>
+    <nav class="main-nav">
+      <div class="nav-item">Stats</div>
+    </nav>
+  </header>
+<!--  <todos></todos>-->
+  <div class="main-content" ng-controller="tboxesCtrl as vm">
+    <div ng-click="vm.hello()">New</div>
+    <div class="tbox-group">
+      <div class="tbox-wrapper">
+        <div class="tbox-header">
+          <div class="tbox-name">Exercise</div>
+        </div>
+        <div class="tbox-container">
+          <div ng-repeat="tbox in vm.tboxes"
+               class="tbox-item tbox-3"
+               ng-click="vm.tboxClick(tbox)"
+               ng-class="{'tbox-done': tbox.isDone}">
+          </div>
+        </div>
+      </div>
+      <div class="tbox-progress">
+        <div ng-repeat="bar in vm.bars"
+             class="tbox-progress-item"></div>
+      </div>
+    </div>
+  </div>
+  
 </body>
 </html>

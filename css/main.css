@@ -1,0 +1,29 @@
+/* ================================= 
+  Page Styles
+==================================== */
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.35em;
+  font-family: 'Varela Round', sans-serif;
+  color: #eee;
+  background: #333;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* ================================= 
+  Flexbox
+==================================== */
+
+header, .main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nav-item {
+  align-self: center;
+}
