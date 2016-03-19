@@ -23,6 +23,10 @@ header, .main-nav {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+h1.blur {
+  -webkit-filter: blur(2px);
+/*  filter: blur(10px);*/
+}
 
 .nav-item {
   align-self: center;
