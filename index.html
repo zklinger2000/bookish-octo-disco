@@ -43,7 +43,7 @@
       <div class="tbox-stats">
         <pre>
 Category: {{ vm.tbox.name }}
-Total time: {{ vm.tbox.duration * vm.tbox.totalAmt }}
+Total time: {{ vm.tbox.duration * vm.tbox.totalAmt }} {{ vm.tbox.units }}s
 Created: {{ vm.tbox.created.toLocaleString() }}
 Completed: {{ vm.tbox.completed.toLocaleString() || 'not yet done' }}
         </pre>

@@ -8,6 +8,7 @@
 .tbox-wrapper {
   background: #eee;
   max-height: 550px;
+  max-width: 344px;
   border-radius: 20px;
 }
 .tbox-name {
