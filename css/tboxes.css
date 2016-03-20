@@ -2,86 +2,79 @@
   Timebox Styles
 ==================================== */
 .tbox-group {
-  max-width: 400px;
+  width: 350px;
 /*  background: blue;*/
 }
-.tbox-wrapper, .tbox-progress {
-  background: #eee;
-}
 .tbox-wrapper {
+  background: #eee;
+  max-height: 550px;
+  border-radius: 20px;
 }
 .tbox-name {
   color: #333;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 900;
   padding: .5em .5em 0;
 }
-.tbox-container {
-  padding: 10px;
-  background: #eee;
-  border-radius: 5px;
-  margin: 45px auto;
-  height: 400px;
+.tbox-time {
+  color: #666;
+  font-size: 1.2em;
+  padding: .5em .5em 0;
 }
-.tbox-item {
-  color: #eee;
-  margin: 5px;
-/*  background: #3db5da;*/
+.tbox-container {
+  padding: 10px 0;
+  background: #eee;
+  border-radius: 20px;
+/*  display: flex;*/
+}
+.cell {
+  margin: 10px;
+  height: 90px;
+  width: 90px;
   background: #c5cdda;
-  border-radius: 3px;
+  border-radius: 10px;
   box-shadow: 3px 4px 3px 2px rgba(0,0,0,0.1);
 }
-/* Progress */
-.tbox-progress {
-  margin-left: 15px;
-  padding: 5px;
+.cell-time {
+  color: #eee;
+  font-size: .6em;
+  text-align: center;
 }
-.tbox-progress-item {
-  margin: 15px;
-/*  background: #3db5da;*/
+.cell:hover {
+  background: #3db5da;
+}
+.tbox-done, .cell.cell-done {
   background: red;
-/*  border-radius: 3px;*/
-/*  box-shadow: 3px 4px 3px 2px rgba(0,0,0,0.1);  */
 }
 
 /* ================================= 
   Flexbox Styles
 ==================================== */
-.tbox-container, .tbox-group {
+.tbox-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
-.tbox-item {
-  flex-grow: 1;
-  flex-shrink: 0;
-}
-.tbox-3 {
-  flex-basis: 80px;
-/*  padding-bottom:28%;*/
-  max-width: 100px;
-}
-.tbox-done {
-  background: red;
-}
-.tbox-wrapper {
-  flex: 2;
-}
-.tbox-progress {
+.tbox-header {
   display: flex;
-  flex-wrap: wrap;
-  flex: 1;
+  justify-content: flex-end;
 }
-.tbox-progress-item {
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 20px;
-  flex-direction: column;
-  height: 50px;
-  padding: 25px;
+.tbox-name, .tbox-time {
+  align-self: center;
+}
+.tbox-name {
+  margin-right: auto;
+}
+.cell {
+  display: flex;
+}
+.cell-time {
   align-self: center;
 }
 
+/* ================================= 
+  Media Query: >= 769px
+==================================== */
 @media (min-width: 769px) {
   
 
