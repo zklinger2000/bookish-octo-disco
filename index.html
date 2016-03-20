@@ -22,9 +22,9 @@
     </nav>
   </header>
 <!--  <todos></todos>-->
-  <div class="main-content" ng-controller="tboxesCtrl as vm">
-    <div ng-click="vm.hello()">New</div>
-    <div class="tbox-group">
+  <div class="main-content">
+    <div ng-click="">New</div>
+    <div  ng-controller="tboxesCtrl as vm">
       <div class="tbox-wrapper">
         <div class="tbox-header">
           <div class="tbox-name" ng-bind="vm.tbox.name"></div>
@@ -39,6 +39,14 @@
             <div class="cell-time" ng-bind="cell.completed.toLocaleString()"></div>
           </div>
         </div>
+      </div>
+      <div class="tbox-stats">
+        <pre>
+Category: {{ vm.tbox.name }}
+Total time: {{ vm.tbox.duration * vm.tbox.totalAmt }}
+Created: {{ vm.tbox.created.toLocaleString() }}
+Completed: {{ vm.tbox.completed.toLocaleString() || 'not yet done' }}
+        </pre>
       </div>
     </div>
   </div>

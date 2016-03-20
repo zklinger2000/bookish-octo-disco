@@ -4,11 +4,10 @@ angular.module('timeboxApp')
 .controller('tboxesCtrl', function(Tbox) {
   var vm = this;
   
-  vm.hello = hello;
-
   vm.tbox = new Tbox(6, 'Exercise', 2, 'hr');
 
   vm.tboxClick = tboxClick;
+  vm.save = save;
   
   function tboxClick(cell) {
     cell.isDone = true;
@@ -23,8 +22,8 @@ angular.module('timeboxApp')
     }
   }
   
-  function hello() {
-    console.log('hellooooo');
+  function save() {
+    console.log('saved');
   }
   
 })
