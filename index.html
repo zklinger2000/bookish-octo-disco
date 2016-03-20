@@ -27,7 +27,22 @@
 <!--  <todos></todos>-->
   <div class="main-content" ng-controller="listTboxesCtrl">
     <div ng-controller="tboxesCtrl as vm">
-      <div ng-click="">New</div>
+      <div ng-model="newTbox" class="new-section">
+        <div class="button-new">New Timebox</div>
+        <div>
+          <label for="name">name: </label>
+          <input type="text" ng-model="newTbox.name" id="name">
+        </div>
+        <div>
+          <label for="duration">duration: </label>
+          <input type="text" ng-model="newTbox.duration" placeholder="0.5, 1, 66..." id="duration">
+        </div>
+        <div>
+          <label for="units">units: </label>
+          <input type="text" ng-model="newTbox.units" placeholder="min, hr, day, week..." id="units">
+        </div>
+        <div class="button-create" ng-click="addTbox(newTbox)">Create</div>
+      </div>  
       <div ng-repeat="tbox in tboxes">
         <div class="tbox-wrapper">
           <div class="tbox-header">

@@ -30,11 +30,11 @@
   "duration": 1,
   "units": "hour",
   "created": "",
-  "totalAmt": 0,
+  "totalAmt": 1,
   "completed": "",
   "cells": [{
-    "isDone": false,
-    "completed": ""
+    "isDone": true,
+    "completed": "3/19/2016, 9:01:12 PM"
   }, {
     "isDone": false,
     "completed": ""

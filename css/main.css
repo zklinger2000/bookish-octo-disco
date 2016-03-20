@@ -16,6 +16,29 @@ body {
 .main-content {
   
 }
+.new-section, .new-section input, .new-section label {
+  line-height: 2em;
+  padding: 5px;
+  margin: 10px;
+}
+.new-section label {
+  padding-right: 15px;
+}
+.new-section input {
+  font-size: 1em;
+  width: 200px;
+}
+.new-section {
+  border-bottom: 2px solid grey;
+  margin-bottom: 50px;
+}
+.button-create {
+  display: inline-block;
+  background: red;
+  padding: 15px;
+  margin: 15px 15px 30px;
+  border-radius: 15px;
+}
 
 /* ================================= 
   Flexbox
