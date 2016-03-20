@@ -28,7 +28,7 @@ header, .main-nav {
 }
 h1.blur {
   -webkit-filter: blur(2px);
-/*  filter: blur(10px);*/
+  filter: blur(2px);
 }
 .nav-item {
   align-self: center;
