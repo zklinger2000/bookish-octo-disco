@@ -1,0 +1,55 @@
+[
+  {  
+  "name": "Exercise",
+  "duration": 0.5,
+  "units": "hour",
+  "created": "",
+  "totalAmt": 0,
+  "completed": "",
+  "cells": [{
+    "isDone": false,
+    "completed": ""
+  }, {
+    "isDone": false,
+    "completed": ""
+  }, {
+    "isDone": false,
+    "completed": ""
+  }, {
+    "isDone": false,
+    "completed": ""
+  }, {
+    "isDone": false,
+    "completed": ""
+  }, {
+    "isDone": false,
+    "completed": ""
+  }]
+}, {
+  "name": "Writing",
+  "duration": 1,
+  "units": "hour",
+  "created": "",
+  "totalAmt": 0,
+  "completed": "",
+  "cells": [{
+    "isDone": false,
+    "completed": ""
+  }, {
+    "isDone": false,
+    "completed": ""
+  }, {
+    "isDone": false,
+    "completed": ""
+  }, {
+    "isDone": false,
+    "completed": ""
+  }, {
+    "isDone": false,
+    "completed": ""
+  }, {
+    "isDone": false,
+    "completed": ""
+  }]
+}
+]

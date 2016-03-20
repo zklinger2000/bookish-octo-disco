@@ -6,12 +6,15 @@
 <!--  <link href='styles/main.css' rel='stylesheet' type="text/css">-->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/tboxes.css">
-  <script src="vendor/angular.js" type="text/javascript"></script>
+<!--  <script src="vendor/angular.js" type="text/javascript"></script>-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <script src="scripts/app.js" type="text/javascript"></script>
   <script src="scripts/controllers/client.controller.todos.js" type="text/javascript"></script>
   <script src="scripts/services/client.service.todos.js" type="text/javascript"></script>
   <script src="scripts/directives/client.directive.todos.js" type="text/javascript"></script>
   <script src="scripts/controllers/client.controller.tboxes.js" type="text/javascript"></script>
+  <script src="scripts/controllers/client.controller.list-tboxes.js" type="text/javascript"></script>
+  <script src="scripts/services/client.service.tboxes.js" type="text/javascript"></script>
   <script src="scripts/models/server.model.tbox.js" type="text/javascript"></script>
 </head>
 <body ng-app="timeboxApp">
@@ -22,31 +25,33 @@
     </nav>
   </header>
 <!--  <todos></todos>-->
-  <div class="main-content">
-    <div ng-click="">New</div>
-    <div  ng-controller="tboxesCtrl as vm">
-      <div class="tbox-wrapper">
-        <div class="tbox-header">
-          <div class="tbox-name" ng-bind="vm.tbox.name"></div>
-          <div class="tbox-time" ng-bind="vm.tbox.duration"></div>
-          <div class="tbox-time" ng-bind="vm.tbox.units"></div>
-        </div>
-        <div class="tbox-container">
-          <div ng-repeat="cell in vm.tbox.cells"
-               class="cell"
-               ng-click="vm.tboxClick(cell)"
-               ng-class="{'cell-done': cell.isDone}">
-            <div class="cell-time" ng-bind="cell.completed.toLocaleString()"></div>
+  <div class="main-content" ng-controller="listTboxesCtrl">
+    <div ng-controller="tboxesCtrl as vm">
+      <div ng-click="">New</div>
+      <div ng-repeat="tbox in tboxes">
+        <div class="tbox-wrapper">
+          <div class="tbox-header">
+            <div class="tbox-name" ng-bind="tbox.name"></div>
+            <div class="tbox-time" ng-bind="tbox.duration"></div>
+            <div class="tbox-time" ng-bind="tbox.units"></div>
+          </div>
+          <div class="tbox-container">
+            <div ng-repeat="cell in tbox.cells"
+                 class="cell"
+                 ng-click="vm.tboxClick(cell, tbox)"
+                 ng-class="{'cell-done': cell.isDone}">
+              <div class="cell-time" ng-bind="cell.completed.toLocaleString()"></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="tbox-stats">
-        <pre>
-Category: {{ vm.tbox.name }}
-Total time: {{ vm.tbox.duration * vm.tbox.totalAmt }} {{ vm.tbox.units }}s
-Created: {{ vm.tbox.created.toLocaleString() }}
-Completed: {{ vm.tbox.completed.toLocaleString() || 'not yet done' }}
-        </pre>
+        <div class="tbox-stats">
+          <pre>
+  Category: {{ tbox.name }}
+  Total time: {{ tbox.duration * tbox.totalAmt }} {{ tbox.units }}s
+  Created: {{ tbox.created.toLocaleString() }}
+  Completed: {{ tbox.completed.toLocaleString() || 'not yet done' }}
+          </pre>
+        </div>
       </div>
     </div>
   </div>

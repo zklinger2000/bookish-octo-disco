@@ -1,14 +1,16 @@
 'use strict';
 
 angular.module('timeboxApp')
-.service('tboxService', function($http) {
+.service('tboxesService', function($http) {
+  console.log('LOADED tboxesService');
   this.helloWorld = function() {
     console.log("This is the tboxesService's method!!");
   };
   
   this.getTboxes = function(callback){
     $http.get('mock/tboxes.json')
-    .then(callback)
+    .then(callback);
+//    console.log(callback);
   };
   
   this.deleteTbox = function(tbox) {
