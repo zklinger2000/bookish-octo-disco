@@ -13,6 +13,9 @@ body {
   padding-left: 5%;
   padding-right: 5%;
 }
+.main-content {
+  
+}
 
 /* ================================= 
   Flexbox
@@ -27,7 +30,11 @@ h1.blur {
   -webkit-filter: blur(2px);
 /*  filter: blur(10px);*/
 }
-
 .nav-item {
   align-self: center;
+}
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

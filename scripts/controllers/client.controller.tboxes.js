@@ -10,12 +10,14 @@ angular.module('timeboxApp')
   vm.save = save;
   
   function tboxClick(cell) {
+    if (!cell.isDone) {
+      cell.completed = new Date();
+      ++vm.tbox.totalAmt;
+    }
     cell.isDone = true;
-    cell.completed = new Date();
-    ++vm.tbox.totalAmt;
     if (vm.tbox.cells.every(function(cell) {
       return cell.isDone;
-    })) {
+    }) && !vm.tbox.completed) {
       vm.tbox.completed = new Date();
       console.log('It\'s Full!');
       console.log(vm.tbox);
